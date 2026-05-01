@@ -1,0 +1,143 @@
+{
+    "name": "@sorrell/utilities",
+    "version": "1.1.60",
+    "private": false,
+    "description": "Various TypeScript utilities.",
+    "keywords": [
+        "utility",
+        "utilities",
+        "typescript",
+        "ts"
+    ],
+    "homepage": "https://github.com/GageSorrell/SorrellWm/tree/Master/Package/Utilities",
+    "bugs": {
+        "url": "https://github.com/GageSorrell/SorrellWm/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GageSorrell/SorrellWm.git"
+    },
+    "license": "MIT",
+    "author": {
+        "email": "gage@sorrell.sh",
+        "name": "Gage Sorrell",
+        "url": "https://sorrell.sh"
+    },
+    "type": "module",
+    "files": [
+        "./Distribution/**/*",
+        "./ReadMe.md",
+        "./package.json"
+    ],
+    "exports": {
+        ".": {
+            "types": "./Distribution/Types/index.d.ts",
+            "import": "./Distribution/ESM/index.js",
+            "require": "./Distribution/CJS/index.js",
+            "default": "./Distribution/ESM/index.js"
+        },
+        "./array": {
+            "types": "./Distribution/Types/Array/index.d.ts",
+            "import": "./Distribution/ESM/array.js",
+            "require": "./Distribution/CJS/array.js",
+            "default": "./Distribution/ESM/array.js"
+        },
+        "./async": {
+            "types": "./Distribution/Types/Async/index.d.ts",
+            "import": "./Distribution/ESM/async.js",
+            "require": "./Distribution/CJS/async.js",
+            "default": "./Distribution/ESM/async.js"
+        },
+        "./complex": {
+            "types": "./Distribution/Types/Math/Index.Complex.d.ts",
+            "import": "./Distribution/ESM/complex.js",
+            "require": "./Distribution/CJS/complex.js",
+            "default": "./Distribution/ESM/complex.js"
+        },
+        "./effect": {
+            "types": "./Distribution/Types/Effect/index.d.ts",
+            "import": "./Distribution/ESM/effect.js",
+            "require": "./Distribution/CJS/effect.js",
+            "default": "./Distribution/ESM/effect.js"
+        },
+        "./fs": {
+            "types": "./Distribution/Types/FileSystem/index.d.ts",
+            "import": "./Distribution/ESM/fs.js",
+            "require": "./Distribution/CJS/fs.js",
+            "default": "./Distribution/ESM/fs.js"
+        },
+        "./functional": {
+            "types": "./Distribution/Types/Functional/index.d.ts",
+            "import": "./Distribution/ESM/functional.js",
+            "require": "./Distribution/CJS/functional.js",
+            "default": "./Distribution/ESM/functional.js"
+        },
+        "./misc": {
+            "types": "./Distribution/Types/Miscellaneous/index.d.ts",
+            "import": "./Distribution/ESM/misc.js",
+            "require": "./Distribution/CJS/misc.js",
+            "default": "./Distribution/ESM/misc.js"
+        },
+        "./npm": {
+            "types": "./Distribution/Types/Npm/index.d.ts",
+            "import": "./Distribution/ESM/npm.js",
+            "require": "./Distribution/CJS/npm.js",
+            "default": "./Distribution/ESM/npm.js"
+        },
+        "./npm/effect": {
+            "types": "./Distribution/Types/Npm/Index.Effect.d.ts",
+            "import": "./Distribution/ESM/npm-effect.js",
+            "require": "./Distribution/CJS/npm-effect.js",
+            "default": "./Distribution/ESM/npm-effect.js"
+        },
+        "./math": {
+            "types": "./Distribution/Types/Math/index.d.ts",
+            "import": "./Distribution/ESM/math.js",
+            "require": "./Distribution/CJS/math.js",
+            "default": "./Distribution/ESM/math.js"
+        },
+        "./path": {
+            "types": "./Distribution/Types/Path/index.d.ts",
+            "import": "./Distribution/ESM/path.js",
+            "require": "./Distribution/CJS/path.js",
+            "default": "./Distribution/ESM/path.js"
+        }
+    },
+    "overrides": {
+        "typescript": "npm:tsover@^6.0.0"
+    },
+    "peerDependenciesMeta": {
+        "tsover": {
+            "optional": true
+        },
+        "tsover-runtime": {
+            "optional": true
+        }
+    },
+    "main": "./Distribution/ESM/index.js",
+    "types": "./Distribution/Types/index.d.ts",
+    "scripts": {
+        "prepublish": "npm run build",
+        "build:js": "node esbuild.config.mts",
+        "build:types": "tsc -p tsconfig.types.json",
+        "build": "npm run build:js && npm run build:types"
+    },
+    "devDependencies": {
+        "@types/node": "^25.6.0",
+        "clipboardy": "^5.3.1",
+        "esbuild": "^0.28.0",
+        "package-json-type": "^1.1.2",
+        "tslib": "^2.8.1",
+        "tsover": "^6.0.0",
+        "tsover-runtime": "0.0.6"
+    },
+    "dependencies": {
+        "chalk": "^5.6.2",
+        "effect": "^3.21.1",
+        "typescript": "npm:tsover@^6.0.0"
+    },
+    "peerDependencies": {
+        "tsover": "^6.0.0",
+        "tsover-runtime": "^0.0.6"
+    }
+}
